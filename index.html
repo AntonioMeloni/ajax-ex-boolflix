@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Boolflix</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js" charset="utf-8"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                <h2>BOOLFLIX</h2>
+                <div class="header-right">
+                    <input type="text" placeholder="Cerca un titolo" class="search-input"/>
+                    <button type="button" class="btn-search">Cerca</button><br><br>
+                </div>
+
+            </div>
+        </header>
+        <div class="card-container">
+
+        </div>
+
+        <script id="card-template" type="text/x-handlebars-template">
+            <div class="card">
+                <!-- <img src="{{cover}}"> -->
+                <span> {{titolo}}</span>
+                <span> {{titoloOr}}</span>
+                <span> {{linguaOr}}</span>
+                <span> {{rate}}</span>
+            </div>
+        </script>
+
+        <script src="js/main.js" charset="utf-8"></script>
+    </body>
+</html>
