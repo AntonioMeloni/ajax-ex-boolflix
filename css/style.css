@@ -48,5 +48,9 @@ header{
 }
 
 .rating{
-    color: #f39c12;
+    color: white;
 }
+
+.rating i{
+     color: #f39c12;
+ }
