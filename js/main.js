@@ -3,6 +3,7 @@ $(document).ready(function () {
     var template = Handlebars.compile(source);
 
     $(".btn-search").click(function(){
+        $('.card').remove();
 		var searchText = $(".search-input").val();
         var apiBaseUrl = 'https://api.themoviedb.org/3';
         var imgBaseUrl = 'https://image.tmdb.org/t/p/w185';
@@ -21,16 +22,35 @@ $(document).ready(function () {
                console.log(films);
                for (var i = 0; i < films.length; i++) {
                    var film = films[i];
+
+                   var stars = '';
+                   var stellaPiena = '<i class="fas fa-star"></i>';
+                   var stellaVuota = '<i class="far fa-star"></i>';
+                   var nStelle = Math.ceil(film.vote_average/2);
+                   for (var x = 0; x < 5; x++) {
+
+                       if(x < nStelle){
+                           stars = stars + stellaPiena;
+                       }
+                       else {
+                           stars = stars + stellaVuota;
+                       }
+                   }
+
                    var datiFilm = {
                        cover: imgBaseUrl + film.poster_path,
                        titolo: film.title,
                        titoloOr: film.original_title,
                        trama: film.overview,
-                       rate: film.vote_average,
-                       linguaOr:film.original_language
+                       rate: nStelle,
+                       linguaOr:film.original_language,
+                       stelle: stars
                    }
+
+
                    var filmCard = template(datiFilm);
                    $('.card-container').append(filmCard);
+
                }
            },
            error: function (err) {
