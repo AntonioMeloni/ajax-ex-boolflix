@@ -26,12 +26,14 @@
         <script id="card-template" type="text/x-handlebars-template">
             <div class="card">
                 <img src="{{cover}}">
-                <span> Titolo: {{titolo}}</span>
-                <span> Titolo originale: {{titoloOr}}</span>
-                <span> Lingua: <img src="https://www.countryflags.io/{{linguaOr}}/shiny/16.png"></span>
-                <span class="rating">
-                    Voto: {{{ stelle }}}
-                </span>
+                <div class="overlay">
+                    <span><strong>Titolo:</strong> {{titolo}}</span>
+                    <span> <strong>Titolo originale:</strong> {{titoloOr}}</span>
+                    <span><strong>Lingua:</strong> <img src="https://www.countryflags.io/{{linguaOr}}/shiny/16.png"></span>
+                    <span class="rating"><strong>Voto:</strong> {{{ stelle }}}</span>
+                    <div class="trama"> <strong>Trama:</strong> {{trama}}</div>
+                </div>
+
             </div>
         </script>
 

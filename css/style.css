@@ -32,19 +32,45 @@ header{
 }
 
 .card-container{
+    max-width: 90%;
+    margin: 0 auto;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 .card{
-    width: 200px;
-    text-align: center;
+    width: 342px;
+    height: 513px;
+    margin: 5px;
+    background-color: #808080;
+    position: relative;
+}
+
+.card .overlay{
+    width: 100%;
+    height: 100%;
+    padding: 20px 10px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 5px;
-    margin: 10px;
-    background-color: #808080;
+    align-items: flex-start;
+    display: none;
+}
+
+.card:hover .overlay{
+    display: flex;
+
+}
+
+.card .overlay .trama{
+    overflow: auto;
 }
 
 .rating{
