@@ -38,9 +38,10 @@ $(document).ready(function () {
                            var film = films[i];
                            var nStelle = Math.ceil(film.vote_average/2);
                            var votiStelle = valutazioneStelle(nStelle);
-
+                          console.log(film);
                            var datiFilm = {
                                cover: imgBaseUrl + film.poster_path,
+                               coverError: '',
                                titolo: film.title,
                                titoloOr: film.original_title,
                                trama: film.overview,
@@ -51,6 +52,10 @@ $(document).ready(function () {
                            }
                            if (datiFilm.linguaOr == 'en') {
                                datiFilm.linguaOr = 'gb';
+                           }
+
+                           if (film.poster_path == null ) {
+                             datiFilm.coverError = 'Copertina in aggiornamento';
                            }
 
                            var filmCard = template(datiFilm);
