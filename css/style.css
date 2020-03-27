@@ -17,7 +17,7 @@ header{
 }
 
 .header-container{
-    width: 100%;
+    width: 90%;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -35,10 +35,30 @@ header{
     max-width: 90%;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
 }
 
+.card-container h3{
+  color: white;
+  font-size: 35px;
+  padding: 30px;
+}
+
+.movieCards{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
+.tvCards{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .card{
     width: 342px;
     height: 513px;
@@ -78,7 +98,7 @@ header{
 
 .card:hover{
     transform: scale(1.05);
-  
+
 }
 
 .card .overlay .trama{

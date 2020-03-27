@@ -47,16 +47,18 @@ $(document).ready(function () {
           var nStelle = Math.ceil(film.vote_average/2);
           var votiStelle = valutazioneStelle(nStelle);
          console.log(film);
-         var titolo, titoloOriginale;
+         var titolo, titoloOriginale, cardSection;
 
          if (tipo == '/movie') {
            titolo = film.title;
            titoloOriginale = film.original_title;
+           cardSection = '.movieCards';
          }
 
          if (tipo == '/tv') {
            titolo = film.name;
            titoloOriginale = film.original_name;
+           cardSection = '.tvCards';
          }
 
           var datiFilm = {
@@ -78,7 +80,7 @@ $(document).ready(function () {
           }
 
           var filmCard = template(datiFilm);
-          $('.card-container').append(filmCard);
+          $(cardSection).append(filmCard);
 
       }
     }
@@ -101,8 +103,6 @@ $(document).ready(function () {
         }
         return stars;
     };
-
-
 
 
 
