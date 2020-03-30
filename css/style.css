@@ -26,13 +26,15 @@ header{
     padding: 10px;
 }
 
-.header-container h2{
-    color: red;
-    font-weight: bold;
+.header-container a{
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
 }
 
 .card-container{
     max-width: 90%;
+    height: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -44,6 +46,14 @@ header{
   color: white;
   font-size: 35px;
   padding: 30px;
+}
+
+.movies{
+  display: none;
+}
+
+.tv-shows{
+  display: none;
 }
 
 .movieCards{
@@ -59,9 +69,22 @@ header{
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.popularMovieCards{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.popularTvCards{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .card{
-    width: 342px;
-    height: 513px;
+    width: 250px;
+    /* height: 513px; */
     margin: 5px;
     position: relative;
     background-color: rgba(0, 0, 0, 0.9);
