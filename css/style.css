@@ -13,6 +13,9 @@ header{
     background-color: #3d3d3d;
     width: 100%;
     height: 70px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
 
 }
 
@@ -28,18 +31,56 @@ header{
 
 .header-container a{
   text-decoration: none;
-  color: red;
+  color: #e50914;
+  font-size: 28px;
   font-weight: bold;
 }
 
+.header-right{
+  display: flex;
+  align-items: center;
+}
+
+.header-container .search-input{
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  padding-right: 20px;
+  font-weight: bold;
+  background: none;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+.header-container .btn-search{
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  font-weight: bold;
+  background: #e50914;
+  border: none;
+  border-radius: 4px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.btn-search:hover{
+  background: #b1060f;
+}
+
 .card-container{
+  margin-top: 100px;
     max-width: 90%;
-    height: 100%;
-    margin: 0 auto;
+    height: 90%;
+    margin: 70px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .card-container h3{
@@ -83,44 +124,55 @@ header{
 }
 
 .card{
-    width: 250px;
-    /* height: 513px; */
+    width: 240px;
     margin: 5px;
-    position: relative;
     background-color: rgba(0, 0, 0, 0.9);
     transition: 0.3s;
 }
 
-.card .overlay{
-    width: 100%;
-    height: 100%;
-    padding: 40px 15px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    display: none;
-    transition: 0.3s;
+.card.selected{
+  border: 3px solid white;
+}
+
+.overlay{
+   width: 80vw;
+   padding: 40px 15px;
+   position: absolute;
+   right: 50%;
+   margin-top: 10px;
+   transform: translate(50%);
+   background-color: rgba(0, 0, 0, 0.95);
+   border-radius: 5px;
+   color: white;
+   display: none;
+}
+
+.overlay-left{
+  width: 40%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay-left span{
+  padding: 5px;
+}
+
+.overlay-right{
+  float: right;
 }
 
 .card .cover{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: 0.3s;
 }
 
-.card:hover .overlay{
-    display: flex;
-}
-
-.card:hover{
+ .cover:hover{
     transform: scale(1.05);
+    border: 3px solid white;
+    cursor: pointer;
 
 }
 
@@ -133,5 +185,5 @@ header{
 }
 
 .rating i{
-     color: #f39c12;
+     color: #b1060f;
  }

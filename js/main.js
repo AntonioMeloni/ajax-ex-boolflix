@@ -2,7 +2,17 @@ $(document).ready(function () {
     var source = $("#card-template").html();
     var template = Handlebars.compile(source);
 
+    $(document).on('click', '.card', function() {
+      $('.card').removeClass('selected');
+      $(this).addClass('selected');
+      if($(this).children('.overlay').is(':visible')) {
+           $(this).children('.overlay').hide();
+       } else {
+           $('.card').children('.overlay').hide();
+           $(this).children('.overlay').slideDown();
+       }
 
+    });
 
     $(".btn-search").click(function () {
         $('.card').remove();
@@ -31,6 +41,7 @@ $(document).ready(function () {
 
             var apiBaseUrl = 'https://api.themoviedb.org/3';
             var imgBaseUrl = 'https://image.tmdb.org/t/p/w342';
+            var bkdBaseUrl = 'https://image.tmdb.org/t/p/w500';
             creaCard('/movie','/popular');
             creaCard('/tv','/popular');
 
@@ -93,6 +104,7 @@ $(document).ready(function () {
 
           var datiFilm = {
               cover: imgBaseUrl + film.poster_path,
+              backdrop: bkdBaseUrl + film.backdrop_path,
               titolo: titolo,
               titoloOr: titoloOriginale,
               trama: film.overview,

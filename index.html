@@ -13,7 +13,7 @@
             <div class="header-container">
                 <h2><a href="index.html">BOOLFLIX</a></h2>
                 <div class="header-right">
-                    <input type="text" placeholder="Cerca un titolo" class="search-input"/>
+                    <input type="text" placeholder="Cerca film o serie TV..  " class="search-input"/>
                     <button type="button" class="btn-search">Cerca</button><br><br>
                 </div>
 
@@ -41,16 +41,21 @@
         <script id="card-template" type="text/x-handlebars-template">
             <div class="card">
                 <img class="cover" src="{{cover}}">
-
                 <div class="overlay">
+
+                  <div class="overlay-left">
                     <span><strong>Titolo:</strong> {{titolo}}</span>
                     <span> <strong>Titolo originale:</strong> {{titoloOr}}</span>
                     <span><strong>Lingua:</strong> <img src="https://www.countryflags.io/{{linguaOr}}/shiny/16.png"></span>
                     <span class="rating"><strong>Voto:</strong> {{{ stelle }}}</span>
-                    <div class="trama"> <strong>Trama:</strong> {{trama}}</div>
+                    <span class="trama"> <strong>Trama:</strong> {{trama}}</span>
+                  </div>
+                  <div class="overlay-right">
+                    <img class="backdrop" src="{{backdrop}}">
+                  </div>
                 </div>
-
             </div>
+
         </script>
 
         <script src="js/main.js" charset="utf-8"></script>
